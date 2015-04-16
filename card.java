@@ -19,6 +19,9 @@ public class card{
   public int pointValue(){
   return ptValue;
   }
+  public String toString(){
+    return this.rnk +" of "+this.st+" (point value = "+this.ptValue+")";
+  }
   
 
   }
