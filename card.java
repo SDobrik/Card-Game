@@ -19,10 +19,15 @@ public class card{
   public int pointValue(){
   return ptValue;
   }
+  //Equality method
+  public boolean equalsTo(,,){
+    
+  }
+  }
+  //to String
   public String toString(){
     return this.rnk +" of "+this.st+" (point value = "+this.ptValue+")";
   }
   
-
   }
 }
