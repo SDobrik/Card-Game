@@ -3,7 +3,6 @@ import java.util.*;
 public class Deck{
 	private List<Card> cards = new ArrayList<Card>();
 	int size = 0;
-	int cardsLeft = 0;
   
   public Deck(String[] r, String[] s, int[] vals){ //ranks, suits, and values
   
@@ -15,22 +14,20 @@ public class Deck{
         size++;
       }
     }
-    
-    cardsLeft = size;
   }
   
   public boolean isEmpty(){
-    return cardsLeft <= 0;
+    return size <= 0;
   }
   public int size(){
-    return cardsLeft;
+    return size;
   }
   public Card deal(){
     Random randO = new Random();
   	int rand = randO.nextInt(cards.size());
   	Card temp = cards.get(rand);
   	cards.remove(rand);
-  	
+  	size--;
   	return temp;
   }
   public void shuffle(){
