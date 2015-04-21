@@ -20,7 +20,7 @@ public class Card{
       return ptValue;
     }
   //Equality method
-    public boolean equalsTo( Card x){
+    public boolean equals( Card x){
       return rnk.equalsTo(x.rank())&&st.equalsTo(x.suit())&&ptValue.equalsTo(x.pointValue());
     }
     
