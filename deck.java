@@ -3,11 +3,7 @@ public class Deck{
   
     for(int i = 0; i < s.length; i++){ // get suits
       for(int x = 0; x < r.length; x++){
-        List getCard = new ArrayList(); // create cards
-        getCard.add(r[x]);
-        getCard.add(s[i])
-        getCard.add(vals[x])
-       	
+        Card card = new Card(r[x], s[i], vals[x]);
         cards.add(card);
         
         deckSize++;
