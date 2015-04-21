@@ -1,7 +1,10 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Deck{
+	private List<Card> cards = new ArrayList<Card>();
+	int size = 0;
+	int cardsLeft = 0;
+  
   public Deck(String[] r, String[] s, int[] vals){ //ranks, suits, and values
   
     for(int i = 0; i < s.length; i++){ // get suits
@@ -21,6 +24,14 @@ public class Deck{
   }
   public int size(){
     return cardsLeft;
+  }
+  public Card deal(){
+    Random randO = new Random();
+  	int rand = randO.nextInt(cards.size());
+  	Card temp = cards.get(rand);
+  	cards.remove(rand);
+  	
+  	return temp;
   }
   public void shuffle(){
   	for(int bruh=cards.size()-1;bruh>0;bruh--){
@@ -61,8 +72,4 @@ public class Deck{
 		rtn = rtn + "\n";
 		return rtn;
 	}
-  
-  private List<Card> cards = new ArrayList<Card>();
-  int size = 0;
-  int cardsLeft = 0;
 }
