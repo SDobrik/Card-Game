@@ -1,14 +1,14 @@
-public class card{
+public class Card{
     //public state variables
     private String rnk, st;
     private int ptValue;
   
      //
     public card(String rank, String suit, int pointValue){
-    rnk= rank;
-    st=suit;
-    ptValue=pointValue;
-   }
+      rnk= rank;
+      st=suit;
+      ptValue=pointValue;
+    }
   //accessor clases
     public String rank(){
       return rnk;
@@ -20,8 +20,8 @@ public class card{
       return ptValue;
     }
   //Equality method
-    public boolean equalsTo(,,){
-    
+    public boolean equalsTo( Card x){
+      return rnk.equalsTo(x.rank())&&st.equalsTo(x.suit())&&ptValue.equalsTo(x.pointValue());
     }
     
     //to String
@@ -29,5 +29,4 @@ public class card{
       return this.rnk +" of "+this.st+" (point value = "+this.ptValue+")";
     }
   
-  }
 }
