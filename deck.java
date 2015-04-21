@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Deck{
   public Deck(String[] r, String[] s, int[] vals){ //ranks, suits, and values
   
@@ -13,14 +16,43 @@ public class Deck{
     cardsLeft = deckSize;
   }
   
-  public boolean isEmpty{
+  public boolean isEmpty(){
     return cardsLeft <= 0;
   }
-  public int size{
+  public int size(){
     return cardsLeft;
   }
+  public String toString() {
+		String rtn = "size = " + size + "\nUndealt cards: \n";
+
+		for (int k = size - 1; k >= 0; k--) {
+			rtn = rtn + cards.get(k);
+			if (k != 0) {
+				rtn = rtn + ", ";
+			}
+			if ((size - k) % 2 == 0) {
+				// Insert carriage returns so entire deck is visible on console.
+				rtn = rtn + "\n";
+			}
+		}
+
+		rtn = rtn + "\nDealt cards: \n";
+		for (int k = cards.size() - 1; k >= size; k--) {
+			rtn = rtn + cards.get(k);
+			if (k != size) {
+				rtn = rtn + ", ";
+			}
+			if ((k - cards.size()) % 2 == 0) {
+				// Insert carriage returns so entire deck is visible on console.
+				rtn = rtn + "\n";
+			}
+		}
+
+		rtn = rtn + "\n";
+		return rtn;
+	}
   
-  List cards = new ArrayList();
+  List<Card> cards = new ArrayList();
   int deckSize = 0;
   int cardsLeft = 0;
 }
