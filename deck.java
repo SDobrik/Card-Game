@@ -26,10 +26,7 @@ public class Deck{
     if(size <= 0){
         return null;
     }else{
-        Random randO = new Random();
-      	int rand = randO.nextInt(cards.size());
-      	Card temp = cards.get(rand);
-      	cards.remove(rand);
+        Card temp = cards.get(size);
       	size--;
       	return temp;
     }
