@@ -26,7 +26,7 @@ public class Deck{
     if(size <= 0){
         return null;
     }else{
-        Card temp = cards.get(size);
+        Card temp = cards.get(size - 1);
       	size--;
       	return temp;
     }
