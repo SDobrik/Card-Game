@@ -23,12 +23,16 @@ public class Deck{
     return size;
   }
   public Card deal(){
-    Random randO = new Random();
-  	int rand = randO.nextInt(cards.size());
-  	Card temp = cards.get(rand);
-  	cards.remove(rand);
-  	size--;
-  	return temp;
+    if(size <= 0){
+        return null;
+    }else{
+        Random randO = new Random();
+      	int rand = randO.nextInt(cards.size());
+      	Card temp = cards.get(rand);
+      	cards.remove(rand);
+      	size--;
+      	return temp;
+    }
   }
   public void shuffle(){
   	for(int bruh=cards.size()-1;bruh>0;bruh--){
