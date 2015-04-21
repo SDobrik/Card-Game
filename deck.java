@@ -9,11 +9,11 @@ public class Deck{
         Card card = new Card(r[x], s[i], vals[x]);
         cards.add(card);
         
-        deckSize++;
+        size++;
       }
     }
     
-    cardsLeft = deckSize;
+    cardsLeft = size;
   }
   
   public boolean isEmpty(){
@@ -53,6 +53,6 @@ public class Deck{
 	}
   
   List<Card> cards = new ArrayList();
-  int deckSize = 0;
+  int size = 0;
   int cardsLeft = 0;
 }
