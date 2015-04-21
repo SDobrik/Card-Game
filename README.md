@@ -1,2 +1,2 @@
 # Card-Game
-yeah this is a project
+This project is made to create an 11's game.
