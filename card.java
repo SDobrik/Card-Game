@@ -1,5 +1,4 @@
 public class Card{
-    //public state variables
     private String rnk, st;
     private int ptValue;
   
