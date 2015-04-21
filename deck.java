@@ -52,7 +52,7 @@ public class Deck{
 		return rtn;
 	}
   
-  List<Card> cards = new ArrayList();
+  private List<Card> cards = new ArrayList<Card>();
   int size = 0;
   int cardsLeft = 0;
 }
