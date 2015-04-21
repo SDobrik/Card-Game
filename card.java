@@ -3,30 +3,30 @@ public class Card{
     private String rnk, st;
     private int ptValue;
   
-     //
-    public card(String rank, String suit, int pointValue){
-      rnk= rank;
-      st=suit;
-      ptValue=pointValue;
-    }
-  //accessor clases
-    public String rank(){
-      return rnk;
-    }
-    public String suit(){
-      return st;
-    }
-    public int pointValue(){
-      return ptValue;
-    }
-  //Equality method
-    public boolean equals( Card x){
-      return rnk.equalsTo(x.rank())&&st.equalsTo(x.suit())&&ptValue.equalsTo(x.pointValue());
+    public Card(String rank, String suit, int pointValue){
+        rnk= rank;
+        st=suit;
+        ptValue=pointValue;
     }
     
-    //to String
-    public String toString(){
-      return this.rnk +" of "+this.st+" (point value = "+this.ptValue+")";
+    public String rank(){
+        return rnk;
     }
-  
+    public String suit(){
+        return st;
+    }
+    public int pointValue(){
+        return ptValue;
+    }
+    public boolean equalsTo(Card x){
+        if(rnk.equals(x.rank()) && st.equals(x.suit()) && (ptValue == x.pointValue())){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public String toString(){
+        return this.rnk +" of "+this.st+" (point value = "+this.ptValue+")";
+    }
 }
