@@ -22,6 +22,16 @@ public class Deck{
   public int size(){
     return cardsLeft;
   }
+  public void shuffle(){
+  	for(int bruh=cards.size()-1;bruh>0;bruh--){
+  		int hm=bruh+1;
+  		int start=0;
+  		int rand=(int)(Math.random()*hm)+start;
+  		Card temp = cards.get(bruh);
+  		cards.set(bruh, cards.get(rand));
+  	}
+  	size= cards.size();
+  }
   public String toString() {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
