@@ -16,6 +16,13 @@ public class ElevensBoard {
 
 			Method1(/* variable from input method */);
 			//method2 is called from method 1
+			
+			public Method2(){
+    				while(elevengameCards.hasNext()){
+        			elevengameCards.replace();
+    			}
+        			return elevengameCards;
+    		}
 
 
 			}
