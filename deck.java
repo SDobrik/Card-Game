@@ -31,7 +31,7 @@ public class Deck{
       	return temp;
     }
   }
-  public void shuffle(){
+  public void Shuffle(){
   	for(int bruh=cards.size()-1;bruh>0;bruh--){
   		int hm=bruh+1;
   		int start=0;
