@@ -18,8 +18,8 @@ public class ElevensBoard {
 			//method2 is called from method 1
 			
 			public Method2(){
-    				while(elevengameCards.hasNext()){
-        			elevengameCards.replace();
+    				while(elevengameCards.hasNext()){ // checks if there's next card
+        			elevengameCards.replace(); //replaces it with next card
     			}
         			return elevengameCards;
     		}
