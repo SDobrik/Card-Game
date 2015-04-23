@@ -1,7 +1,9 @@
 import java.util.*;
 
-public class TextBased{
+public class STextBased{
     public static void main(String[] args){
+        boolean StillPlaying=false;
+        do {
         String[] ranks = {"K", "Q", "J"};
         String[] suits = {"♦", "♥", "♣", "♠"};
         int[]    value = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -16,10 +18,9 @@ public class TextBased{
         List<Card> curCards = new ArrayList<Card>();
         
         boolean win = false;
-        boolean StillPlaying=false;
+        
 
         System.out.println("Instructions\n\nPick two cards (input the numbers with spaces) that add to 11.\nYou can pick a K, Q, and a J to clear them.\n\nEnter 'exit' to quit.\n\n");
-        do {
             for(int i = 0; i < 9; i++){
             Card dealt = allCards.deal();
             curCards.add(dealt);
@@ -38,7 +39,7 @@ public class TextBased{
             
                 if(numLine.toLowerCase().equals("exit")){
                 break;
-             } else if (numLine.equalsToIgnoreCase("reset")) {
+             } else if (numLine.equalsIgnoreCase("reset")) {
                  StillPlaying=true;
                  break;
              }
@@ -122,20 +123,20 @@ public class TextBased{
         }else{
             System.out.println("\nYou lose.");
         }
-        System.out.println("Do you want to play a game? (type reset)")
+        System.out.println("Do you want to play a game? (type reset)");
         Scanner resetReader= new Scanner(System.in);
         String wutUwantM8= resetReader.next();
         //checking what they want to do next
-        if(wutUwantM8.equalsToIgnoreCase("reset")){
+        if(wutUwantM8.equalsIgnoreCase("reset")){
             StillPlaying=true;
-        }else if(wutUwantM8.equalsToIgnoreCase("exit")) {
+        }else if(wutUwantM8.equalsIgnoreCase("exit")) {
             continue;
         }else{
-            System.out.println("command not recognised, exiting now.")
+            System.out.println("command not recognised, exiting now.");
         }
 
 
 
-        }while(StillPlaying==true)
+        }while(StillPlaying==true);
     }
 }
