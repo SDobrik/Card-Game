@@ -21,6 +21,7 @@ public class STextBased{
         
 
         System.out.println("Instructions\n\nPick two cards (input the numbers with spaces) that add to 11.\nYou can pick a K, Q, and a J to clear them.\n\nEnter 'exit' to quit.\n\n");
+        System.out.println("To reset, exit then type reset.");
             for(int i = 0; i < 9; i++){
             Card dealt = allCards.deal();
             curCards.add(dealt);
@@ -39,9 +40,7 @@ public class STextBased{
             
                 if(numLine.toLowerCase().equals("exit")){
                 break;
-             } else if (numLine.equalsIgnoreCase("reset")) {
-                 StillPlaying=true;
-                 break;
+             
              }
             
                 try{
