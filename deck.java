@@ -1,14 +1,27 @@
 import java.util.*;
 
 public class Deck{
-	private List<Card> cards = new ArrayList<Card>();
-	int size = 0;
+    private List<Card> cards = new ArrayList<Card>();
+    int size = 0;
   
   public Deck(String[] r, String[] s, int[] vals){ //ranks, suits, and values
   
-    for(int i = 0; i < s.length; i++){ // get suits
-      for(int x = 0; x < r.length; x++){
-        Card card = new Card(r[x], s[i], vals[x]);
+    for(int i = 0; i < vals.length; i++){
+      for(int x = 0; x < s.length; x++){
+        Card card;
+        if(vals[i] == 1){
+            card = new Card("A", s[x], vals[i]);
+        }else{
+            card = new Card(Integer.toString(vals[i]), s[x], vals[i]);
+        }
+        cards.add(card);
+        
+        size++;
+      }
+    }
+    for(int i = 0; i < r.length; i++){ // get suits
+      for(int x = 0; x < s.length; x++){
+        Card card = new Card(r[i], s[x], 0);
         cards.add(card);
         
         size++;
@@ -23,49 +36,52 @@ public class Deck{
     return size;
   }
   public Card deal(){
-    if(size <= 0){
+    if(size < 0){
         return null;
     }else{
         Card temp = cards.get(size - 1);
-      	size--;
-      	return temp;
+        size--;
+        return temp;
     }
   }
-  public void Shuffle(){
-  	for(int bruh=cards.size()-1;bruh>0;bruh--){
-  		int hm=bruh+1;
-  		int start=0;
-  		int rand=(int)(Math.random()*hm)+start;
-  		Card temp = cards.get(bruh);
-  		cards.set(bruh, cards.get(rand));
-  	}
-  	size= cards.size();
+  public void shuffle(){
+        List<Card> newCards = new ArrayList<Card>();
+        while(cards.size() > 0){
+            Random rn = new Random();
+            int randNum = rn.nextInt(cards.size());
+            
+            newCards.add(cards.get(randNum));
+            cards.remove(randNum);
+        }
+        cards = newCards;
   }
   public String toString() {
-		String rtn = "size = " + size + "\nUndealt cards: \n";
+        String rtn = "size = " + size + "\nUndealt cards: \n";
 
-		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards.get(k);
-			if (k != 0) {
-				rtn = rtn + ", ";
-			}
-			if ((size - k) % 2 == 0) {
-				rtn = rtn + "\n";
-			}
-		}
+        for (int k = size - 1; k >= 0; k--) {
+            rtn = rtn + cards.get(k);
+            if (k != 0) {
+                rtn = rtn + ", ";
+            }
+            if ((size - k) % 2 == 0) {
+                // Insert carriage returns so entire deck is visible on console.
+                rtn = rtn + "\n";
+            }
+        }
 
-		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.size() - 1; k >= size; k--) {
-			rtn = rtn + cards.get(k);
-			if (k != size) {
-				rtn = rtn + ", ";
-			}
-			if ((k - cards.size()) % 2 == 0) {
-				rtn = rtn + "\n";
-			}
-		}
+        rtn = rtn + "\nDealt cards: \n";
+        for (int k = cards.size() - 1; k >= size; k--) {
+            rtn = rtn + cards.get(k);
+            if (k != size) {
+                rtn = rtn + ", ";
+            }
+            if ((k - cards.size()) % 2 == 0) {
+                // Insert carriage returns so entire deck is visible on console.
+                rtn = rtn + "\n";
+            }
+        }
 
-		rtn = rtn + "\n";
-		return rtn;
-	}
+        rtn = rtn + "\n";
+        return rtn;
+    }
 }
