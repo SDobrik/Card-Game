@@ -1,4 +1,5 @@
 public class Card{
+    //public state variables
     private String rnk, st;
     private int ptValue;
   
@@ -17,13 +18,16 @@ public class Card{
     public int pointValue(){
         return ptValue;
     }
-    public boolean matches(Card otherCard) {
-		return otherCard.suit().equals(this.suit())
-			&& otherCard.rank().equals(this.rank())
-			&& otherCard.pointValue() == this.pointValue();
-	}
+    public boolean equalsTo(Card x){
+        if(rnk.equals(x.rank()) && st.equals(x.suit()) && (ptValue == x.pointValue())){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public String toString(){
         return this.rnk +" of "+this.st+" (point value = "+this.ptValue+")";
     }
+  
 }
